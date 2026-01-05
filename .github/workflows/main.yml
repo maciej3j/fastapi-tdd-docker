@@ -17,7 +17,7 @@ jobs:
       - name: Log in to Github Packages
         run: echo ${GITHUB_TOKEN} | docker login -u ${GITHUB_ACTOR} --password-stdin ghcr.io
         env:
-          GITHUB_TOKEN: ${{ secretes.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Pull image
         run: |
           docker build \
